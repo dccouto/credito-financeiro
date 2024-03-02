@@ -2,10 +2,9 @@ package com.coutech.financeirosystem.entities
 
 import com.coutech.financeirosystem.enums.Status
 import jakarta.persistence.*
-import org.hibernate.annotations.ManyToAny
 import java.math.BigDecimal
 import java.time.LocalDate
-import java.util.UUID
+import java.util.*
 
 @Entity
 @Table(name = "Credito")
@@ -32,7 +31,7 @@ data class Credit(
     val status: Status = Status.IN_PROGRESS,
 
     @ManyToOne
-    @JoinColumn(name = "credits")
+    @JoinColumn(name = "FK_CLIENTE")
     val customer: Customer? = null
 
 )
