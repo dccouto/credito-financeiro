@@ -1,6 +1,7 @@
 package com.coutech.financeirosystem.entities
 
-import jakarta.persistence.*
+import javax.persistence.*
+
 
 @Entity
 @Table(name = "Cliente")

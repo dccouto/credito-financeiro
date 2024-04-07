@@ -1,10 +1,10 @@
 package com.coutech.financeirosystem.entities
 
 import com.coutech.financeirosystem.enums.Status
-import jakarta.persistence.*
 import java.math.BigDecimal
 import java.time.LocalDate
 import java.util.*
+import javax.persistence.*
 
 @Entity
 @Table(name = "Credito")
