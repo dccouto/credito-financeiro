@@ -1,17 +1,17 @@
 package com.coutech.financeirosystem.controllers
 
-import com.coutech.financeirosystem.entities.Credit
-import com.coutech.financeirosystem.service.impl.CreditService
+import com.coutech.financeirosystem.entities.Customer
+import com.coutech.financeirosystem.service.impl.CustomerService
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping(name = "credit")
-class CreditController(creditService: CreditService) {
+@RequestMapping(name = "customer")
+class CustomerController(customerService: CustomerService) {
 
-    fun createCredit(): ResponseEntity<Credit> {
+    fun createCustomer(): ResponseEntity<Customer> {
         TODO("Realizar o save")
         return ResponseEntity.status(HttpStatus.OK).build()
     }
