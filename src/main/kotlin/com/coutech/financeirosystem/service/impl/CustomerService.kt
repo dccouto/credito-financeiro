@@ -20,6 +20,6 @@ class CustomerService(
     }
 
     override fun delete(id: Long) {
-        TODO("Not yet implemented")
+        this.repository.deleteById(id)
     }
 }
