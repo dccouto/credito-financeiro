@@ -12,5 +12,5 @@ interface ICreditService {
 
     fun findAllByCustomer(customerId: Long) : List<Credit>
 
-    fun findByCreditCode(creditCode: UUID) : Credit
+    fun findByCreditCode(customerId: Long, creditCode: UUID): Credit
 }

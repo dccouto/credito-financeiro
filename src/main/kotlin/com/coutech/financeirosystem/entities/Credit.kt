@@ -32,6 +32,6 @@ data class Credit(
 
     @ManyToOne
     @JoinColumn(name = "FK_CLIENTE")
-    val customer: Customer? = null
+    var customer: Customer? = null
 
 )
