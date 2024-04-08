@@ -1,5 +1,6 @@
 package com.coutech.financeirosystem.entities
 
+import java.math.BigDecimal
 import javax.persistence.*
 
 
@@ -22,6 +23,9 @@ data class Customer(
 
     @Column(name = "EMAIL", nullable = false, unique = true)
     var email: String = "",
+
+    @Column(name = "RENDA", nullable = false, unique = true)
+    var income: BigDecimal = BigDecimal.ZERO,
 
     @Column(name = "SENHA", nullable = false)
     var password: String = "",

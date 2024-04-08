@@ -7,7 +7,7 @@ import javax.persistence.Embeddable
 @Embeddable
 data class Address(
     @Column(name = "CEP", nullable = false)
-    var zipcode: String = "",
+    var zipCode: String = "",
     @Column(name = "RUA", nullable = false)
     var street: String = ""
 )
