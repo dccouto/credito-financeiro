@@ -10,7 +10,7 @@ data class Customer(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "PK_CLIENTE")
-    val id: Long? = null,
+    var id: Long? = null,
 
     @Column(name = "NOME", nullable = false)
     var firstName: String = "",
@@ -19,7 +19,7 @@ data class Customer(
     var lastName: String = "",
 
     @Column(name = "CPF", nullable = false, unique = true)
-    val cpf: String,
+    var cpf: String = "",
 
     @Column(name = "EMAIL", nullable = false, unique = true)
     var email: String = "",

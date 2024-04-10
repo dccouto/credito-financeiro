@@ -24,7 +24,7 @@ data class Credit(
     val dayFirstInstallment: LocalDate,
 
     @Column(name = "NUM_PARCELA", nullable = false)
-    var numberOfInstallment: Int = 0,
+    val numberOfInstallment: Int = 0,
 
     @Column(name = "STATUS", nullable = false)
     @Enumerated
