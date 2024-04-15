@@ -6,16 +6,12 @@ import com.coutech.financeirosystem.entities.Credit
 import com.coutech.financeirosystem.service.impl.CreditService
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
+import java.util.*
 import java.util.stream.Collectors
 
 @RestController
-@RequestMapping(name = "credit")
+@RequestMapping("credit")
 class CreditController(private val creditService: CreditService) {
 
     @PostMapping
@@ -25,12 +21,21 @@ class CreditController(private val creditService: CreditService) {
     }
 
     @GetMapping("/customer/{id}")
-    fun findAllByCustomerId(@PathVariable(name = "id") customerId: Long) : ResponseEntity<List<CreditView>>{
+    fun findAllByCustomerId(@PathVariable(name = "id") customerId: Long): ResponseEntity<List<CreditView>> {
         val creditViews = this.creditService.findAllByCustomer(customerId)
             .stream()
             .map { credit: Credit -> CreditView(credit) }
             .collect(Collectors.toList())
         return ResponseEntity.status(HttpStatus.CREATED).body(creditViews)
 
+    }
+
+    @GetMapping("/credit-code/{code}")
+    fun findByCreditCode(
+        @RequestParam(name = "customerId") customerId: Long,
+        @PathVariable(name = "code") creditCode: UUID,
+    ): ResponseEntity<CreditView> {
+        return ResponseEntity.status(HttpStatus.OK)
+            .body(CreditView(creditService.findByCreditCode(customerId, creditCode)))
     }
 }

@@ -3,8 +3,10 @@ package com.coutech.financeirosystem.service.impl
 import com.coutech.financeirosystem.entities.Credit
 import com.coutech.financeirosystem.repositories.CreditRepository
 import com.coutech.financeirosystem.service.ICreditService
+import org.springframework.stereotype.Service
 import java.util.*
 
+@Service
 class CreditService(
     private val repository: CreditRepository,
     private val customerService: CustomerService
