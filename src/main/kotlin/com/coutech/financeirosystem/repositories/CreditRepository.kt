@@ -7,5 +7,6 @@ import java.util.*
 interface CreditRepository : JpaRepository<Credit, Long> {
 
     fun findByIdAndCreditCode(id: Long, creditCode : UUID) : Credit?
-     fun findAllByCustomerId(id: Long): List<Credit>
+    fun findAllByCustomerId(id: Long): List<Credit>
+    fun findByCustomerIdAndCreditCode(customerId: Long, creditCode: UUID): Credit?
 }

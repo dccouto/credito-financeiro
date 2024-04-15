@@ -35,7 +35,7 @@ class CreditService(
     }
 
     override fun findByCreditCode(customerId: Long, creditCode: UUID): Credit {
-        return repository.findByIdAndCreditCode(customerId, creditCode)
+        return repository.findByCustomerIdAndCreditCode(customerId, creditCode)
             ?: throw RuntimeException("Credit code não encontrado");
     }
 }
