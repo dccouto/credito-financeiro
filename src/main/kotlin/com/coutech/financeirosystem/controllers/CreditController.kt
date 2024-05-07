@@ -9,13 +9,14 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import java.util.*
 import java.util.stream.Collectors
+import javax.validation.Valid
 
 @RestController
 @RequestMapping("credit")
 class CreditController(private val creditService: CreditService) {
 
     @PostMapping
-    fun createCredit(@RequestBody creditDto: CreditDto): ResponseEntity<Credit> {
+    fun createCredit(@Valid @RequestBody creditDto: CreditDto): ResponseEntity<Credit> {
         val creditEntity: Credit = creditDto.toEntity();
         return ResponseEntity.status(HttpStatus.CREATED).body(creditService.save(creditEntity))
     }
